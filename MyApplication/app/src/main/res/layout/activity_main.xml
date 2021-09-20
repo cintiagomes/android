@@ -123,13 +123,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Não tem uma conta? Criar uma conta agora"
+        android:text="Criar uma conta agora"
         android:layout_below="@id/text_esqueci"
         android:layout_alignEnd="@id/check_box_"
         android:clickable="true"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Não tem uma conta?"
+        android:gravity="center"
+        android:layout_below="@id/text_esqueci"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="50dp"/>
 
 
 
