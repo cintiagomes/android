@@ -61,7 +61,7 @@
             android:text="25.7"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
-            android:textSize="20sp"/>
+            android:textSize="19sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
             android:text="1980"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
-            android:textSize="20sp"/>
+            android:textSize="19sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
             android:text="49"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
-            android:textSize="20sp"/>
+            android:textSize="19sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -85,7 +85,15 @@
             android:text="67"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
-            android:textSize="20sp"/>
+            android:textSize="19sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.58"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textSize="19sp"/>
 
     </LinearLayout>
 
@@ -129,6 +137,14 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Altura"
+            android:textAlignment="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"/>
+
     </LinearLayout>
 
     <RelativeLayout
@@ -137,8 +153,8 @@
 
         <ImageView
             android:id="@+id/img_pesa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
 
         <TextView
             android:id="@+id/title_pesa"
@@ -151,7 +167,9 @@
             android:id="@+id/subtitle_pesa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Acompanhe seu peso"/>
+            android:text="Acompanhe seu peso"
+            android:layout_toEndOf="@+id/img_pesa"
+            android:layout_alignParentBottom=""/>
 
     </RelativeLayout>
 
