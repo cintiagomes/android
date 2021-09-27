@@ -156,6 +156,7 @@
         android:text="Desenvolvido por DS2M-B"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:layout_marginBottom="5dp"/>
 
 </RelativeLayout>
