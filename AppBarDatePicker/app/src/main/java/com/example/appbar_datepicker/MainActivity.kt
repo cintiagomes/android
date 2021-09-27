@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.appbar_datepicker
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,15 +10,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val criarconta = findViewById<TextView>(R.id.criar_conta)
+        supportActionBar!!.hide()
 
-        criarconta.setOnClickListener {
-            val abrirDashboardActivity =
-                Intent(this, abrirDashboardActivity::class.java)
-            startActivity(abrirDashboardActivity)
+        val tvHello = findViewById<TextView>(R.id.tv_hello)
+
+        tvHello.setOnClickListener {
+            val abrirDatePickerActivity =
+                Intent(this, DatePickerActivity::class.java)
+            startActivity(abrirDatePickerActivity)
         }
-
-    }
 
     }
 }
