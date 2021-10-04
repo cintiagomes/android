@@ -10,15 +10,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val criarconta = findViewById<TextView>(R.id.criar_conta)
+        supportActionBar!!.hide()
 
-        criarconta.setOnClickListener {
-            val abrirDashboardActivity =
-                Intent(this, abrirDashboardActivity::class.java)
-            startActivity(abrirDashboardActivity)
-        }
+        val criarConta = findViewById<TextView>(R.id.criar_conta)
+
+        criarConta.setOnClickListener {
+          val abrirNovoUsuarioActivity =
+              Intent(this, NovoUsuarioActivity::class.java)
+          startActivity(abrirNovoUsuarioActivity)
+       }
 
     }
 
-    }
 }

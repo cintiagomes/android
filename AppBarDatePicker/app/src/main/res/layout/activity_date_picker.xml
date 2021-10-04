@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Selecione uma data"
-        android:textSize="32sp"/>
+        android:textSize="32sp"
+        android:focusable="false"/>
 
 </LinearLayout>

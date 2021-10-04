@@ -195,7 +195,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/iconPhoto"
+                android:src="@drawable/icon_photo"
                 android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
@@ -384,7 +384,7 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/icon_balança"
+                        android:src="@drawable/icon_balanca"
                         android:scaleType="centerCrop"/>
 
                 </LinearLayout>
