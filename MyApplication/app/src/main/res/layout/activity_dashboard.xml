@@ -221,7 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#b387ff"
+            android:background="@drawable/acitivity_background"
             android:paddingTop="30dp"
             android:paddingBottom="10dp">
 
