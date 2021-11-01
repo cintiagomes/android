@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
@@ -14,6 +15,7 @@ import com.example.myapplication.model.Usuario
 import com.example.myapplication.utils.convertStringToLocalDate
 import java.time.LocalDate
 import java.util.*
+import kotlin.math.log
 
 class NovoUsuarioActivity : AppCompatActivity() {
 
@@ -55,8 +57,25 @@ class NovoUsuarioActivity : AppCompatActivity() {
 
         etDataNascimento.setOnClickListener {
             val dp = DatePickerDialog(this,
-                    DatePickerDialog.OnDateSetListener { _, _ano, _mes, _dia ->
-                        etDataNascimento.setText("$_dia/${_mes + 1}/$_ano")
+                    DatePickerDialog.OnDateSetListener { view, _ano, _mes, _dia ->
+
+                        var diaFinal = _dia
+                        var mesFinal = _mes + 1
+
+                        var mesString = "$mesFinal"
+                        var diaString = "$diaFinal"
+
+                        if (mesFinal < 10 ){
+                            mesString = "0$mesFinal"
+                        }
+                        if (diaFinal < 10 ){
+                            diaString = "0$diaFinal"
+                        }
+
+                        Log.i("xpto", _dia.toString())
+                        Log.i("xpto", _mes.toString())
+
+                        etDataNascimento.setText("$diaString/$mesString/$_ano")
                     }, ano, mes, dia)
 
             dp.show()
@@ -146,6 +165,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
             etData.error = "A data é obrigatória!"
             valido = false
         }
-        return false
+
+        return valido
     }
 }
