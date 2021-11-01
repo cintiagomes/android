@@ -2,20 +2,24 @@ package com.example.myapplication.ui
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 import com.example.myapplication.R
 import com.example.myapplication.model.Usuario
+import com.example.myapplication.utils.convertBitmapToBase64
 import com.example.myapplication.utils.convertStringToLocalDate
 import java.time.LocalDate
 import java.util.*
 import kotlin.math.log
+
+const val CODE_IMAGEM = 100
 
 class NovoUsuarioActivity : AppCompatActivity() {
 
@@ -27,6 +31,9 @@ class NovoUsuarioActivity : AppCompatActivity() {
     lateinit var etData: EditText
     lateinit var radioFeminino: RadioButton
     lateinit var radioMasculino: RadioButton
+    lateinit var tvTrocarFoto: TextView
+    lateinit var ivFotoPerfil: ImageView
+    var imageBitmap : Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +47,14 @@ class NovoUsuarioActivity : AppCompatActivity() {
         etData = findViewById(R.id.et_data)
         radioFeminino = findViewById(R.id.radio_feminino)
         radioMasculino = findViewById(R.id.radio_masculino)
+        tvTrocarFoto = findViewById(R.id.tv_trocar_foto)
+        ivFotoPerfil = findViewById(R.id.iv_foto_perfil)
 
         supportActionBar!!.title = "Novo usuário"
 
+        tvTrocarFoto.setOnClickListener {
+            abrirGaleria()
+        }
 
         //Criar uma calendário
         val calendario = Calendar.getInstance()
@@ -80,6 +92,41 @@ class NovoUsuarioActivity : AppCompatActivity() {
 
             dp.show()
         }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, imagem: Intent?) {
+        super.onActivityResult(requestCode, resultCode, imagem)
+
+        if (requestCode == CODE_IMAGEM && resultCode == -1){
+            //Recuperar a imagem do stream(fluxo)
+            val fluxoImagem = contentResolver.openInputStream(imagem!!.data!!)
+
+            //Converter os bits em um bitmap
+            imageBitmap = BitmapFactory.decodeStream(fluxoImagem)
+
+            //Colocar o bitmap no ImageView
+            ivFotoPerfil.setImageBitmap(imageBitmap)
+
+        }
+
+    }
+
+    private fun abrirGaleria(){
+
+        //Abrir a galeria de imagens do dispositivo
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+
+        //Abrir a Activity responsável por exibir as imagens
+        //esta activity retornará o conteúdo selecionado
+        //para o nosso app
+        startActivityForResult(
+                Intent.createChooser(intent,
+                        "Escolha uma foto"),
+                CODE_IMAGEM
+        )
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -107,7 +154,8 @@ class NovoUsuarioActivity : AppCompatActivity() {
                     nascimento.dayOfMonth
                 ),
                 editProfissao.text.toString(),
-                if (radioFeminino.isChecked)'F' else 'M'
+                if (radioFeminino.isChecked)'F' else 'M',
+                    convertBitmapToBase64(imageBitmap!!)
             )
 
             //Salvar o registro
@@ -130,6 +178,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
             editor.putString("dataNascimento", usuario.dataNascimento.toString())
             editor.putString("profissao", usuario.profissao)
             editor.putString("sexo", usuario.sexo.toString())
+            editor.putString("fotoPerfil", usuario.fotoPerfil)
             editor.apply()
 
         }
