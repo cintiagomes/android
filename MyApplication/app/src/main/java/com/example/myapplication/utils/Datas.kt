@@ -15,3 +15,5 @@ fun convertStringToLocalDate(brazilDate: String) : LocalDate{
     return localDateFormat
 
 }
+
+//fun calcularIdade(dataAtual: Date, nascimento: Date) : Int {}

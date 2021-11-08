@@ -193,6 +193,7 @@
             app:cardCornerRadius="75dp">
 
             <ImageView
+                android:id="@+id/iv_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon_photo"
@@ -201,6 +202,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/tv_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nome do Usuario"
@@ -209,6 +211,7 @@
             android:layout_marginTop="15dp"/>
 
         <TextView
+            android:id="@+id/tv_profissao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profissão do Usuario"
@@ -232,6 +235,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_dash_imc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="24.7"
@@ -257,6 +261,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_dash_ncd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="2180"
@@ -282,6 +287,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_dash_idade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="16"
@@ -306,6 +312,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_dash_peso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="80"
@@ -331,6 +338,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_dash_altura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="1.80"

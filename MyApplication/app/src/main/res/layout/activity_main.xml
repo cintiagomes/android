@@ -64,7 +64,7 @@
         android:layout_marginBottom="25dp"/>
 
     <EditText
-        android:id="@+id/ediText_email"
+        android:id="@+id/edit_login_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_login_fazer_"
@@ -78,17 +78,18 @@
         android:background="@drawable/bordinha"/>
 
     <EditText
-        android:id="@+id/ediText_senha"
+        android:id="@+id/edit_login_senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ediText_email"
+        android:layout_below="@id/edit_login_email"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Senha"
         android:background="@drawable/bordinha"
         android:padding="15dp"
         android:drawableStart="@drawable/ic_password_"
-        android:drawablePadding="8dp"/>
+        android:drawablePadding="8dp"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/button_entrar"
@@ -96,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Entrar"
-        android:layout_below="@id/ediText_senha"
+        android:layout_below="@id/edit_login_senha"
         android:textColor="@android:color/white"
         android:background="@drawable/buttom_borda"/>
 

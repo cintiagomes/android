@@ -1,11 +1,11 @@
 package com.example.myapplication.utils
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 fun convertBitmapToBase64(bitmap: Bitmap) : String {
-
     val bitmapArray = ByteArrayOutputStream()
 
     bitmap.compress(
@@ -16,5 +16,14 @@ fun convertBitmapToBase64(bitmap: Bitmap) : String {
     return Base64.encodeToString(
             bitmapArray.toByteArray(),
             Base64.DEFAULT)
+
+}
+
+fun convertBase64ToBitmap(base64Imagem: String) : Bitmap{
+
+    //converter Base64 em bytes
+    val imageBytes = Base64.decode(base64Imagem, Base64.DEFAULT)
+    return BitmapFactory.decodeByteArray(
+            imageBytes, 0, imageBytes.size)
 
 }

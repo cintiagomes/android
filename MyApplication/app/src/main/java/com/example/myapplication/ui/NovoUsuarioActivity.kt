@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
+import androidx.core.graphics.drawable.toBitmap
 import com.example.myapplication.R
 import com.example.myapplication.model.Usuario
 import com.example.myapplication.utils.convertBitmapToBase64
@@ -49,6 +50,15 @@ class NovoUsuarioActivity : AppCompatActivity() {
         radioMasculino = findViewById(R.id.radio_masculino)
         tvTrocarFoto = findViewById(R.id.tv_trocar_foto)
         ivFotoPerfil = findViewById(R.id.iv_foto_perfil)
+
+        //Carregar bitmap padrão caso o usuário não escolha uma foto
+        //imageBitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_pessoa)
+
+        //Caso a imagem seja um vector asset
+        imageBitmap =
+                resources
+                        .getDrawable(R.drawable.ic_pessoa)
+                        .toBitmap()
 
         supportActionBar!!.title = "Novo usuário"
 
@@ -164,7 +174,8 @@ class NovoUsuarioActivity : AppCompatActivity() {
             //A instrução abaixo irá criar um
             // arquivo sharedPreferences se não existir
             // Se existir ele será aberto para edição
-            val dados = getSharedPreferences("usuario", Context.MODE_PRIVATE)
+            val dados = getSharedPreferences(
+                    "usuario", Context.MODE_PRIVATE)
 
             //Vamos criar objeto que permitirá a
             //edição dos dados do arquivo SharedPreferences
@@ -190,6 +201,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
 
     fun validarCampos(): Boolean {
         var valido = true
+
         if (editEmail.text.isEmpty()) {
             editEmail.error = "O e-mail é obrigatório!"
             valido = false
