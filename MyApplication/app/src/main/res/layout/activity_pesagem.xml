@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityPesagem">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="412dp"
+        android:layout_height="293dp"
+        app:srcCompat="@drawable/pesagem_img"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-4dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="293dp"
+        android:layout_height="59dp"
+        android:fontFamily="sans-serif"
+        android:text="Mantenha seu peso sempre atualizado, assim você poderá acompanhar sua evolução."
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="194dp"
+        android:layout_height="27dp"
+        android:fontFamily="sans-serif-black"
+        android:text="20/11/2021"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="195dp"
+        android:layout_height="19dp"
+        android:fontFamily="sans-serif"
+        android:text="Seu novo peso:"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="520dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:srcCompat="@drawable/ic_boneco"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="401dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="198dp"
+        android:layout_height="28dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Dados da sua pesagem"
+        android:textAlignment="center"
+        android:textColor="#6E69FF"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="401dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="195dp"
+        android:layout_height="19dp"
+        android:fontFamily="sans-serif"
+        android:text="Data de pesagem:"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="450dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="194dp"
+        android:layout_height="27dp"
+        android:fontFamily="sans-serif-black"
+        android:text="60 kg"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="328dp"
+        android:layout_height="57dp"
+        android:background="@drawable/buttom_borda"
+        android:drawableTint="#ffda54"
+        android:text="Pesar agora"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="601dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="37dp"
+        app:srcCompat="@drawable/ic_info"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="411dp"
+        android:layout_height="197dp"
+        app:srcCompat="@drawable/ic_wave_bottom"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="596dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="320dp"
+        android:layout_height="39dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Vamos nos pesar?"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
