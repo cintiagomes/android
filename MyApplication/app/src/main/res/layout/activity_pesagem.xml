@@ -4,129 +4,179 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityPesagem">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="412dp"
-        android:layout_height="293dp"
-        app:srcCompat="@drawable/pesagem_img"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-4dp" />
+    tools:context=".ui.PesagemActivity">
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="293dp"
         android:layout_height="59dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="sans-serif"
         android:text="Mantenha seu peso sempre atualizado, assim você poderá acompanhar sua evolução."
         android:textAlignment="viewStart"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="336dp" />
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_data_pesagem"
         android:layout_width="194dp"
         android:layout_height="27dp"
+        android:layout_marginStart="40dp"
         android:fontFamily="sans-serif-black"
         android:text="20/11/2021"
         android:textColor="@color/black"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="469dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/et_novo_peso"
+        android:layout_width="194dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="sans-serif-black"
+        android:text="60"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="195dp"
         android:layout_height="19dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
-        android:text="Seu novo peso:"
-        android:textColor="@color/black"
+        android:text="Nível de atividade:"
         android:textSize="13sp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="520dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data_pesagem" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="32dp"
         android:layout_height="29dp"
-        app:srcCompat="@drawable/ic_boneco"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="401dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:srcCompat="@drawable/ic_boneco" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="198dp"
         android:layout_height="28dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="140dp"
         android:fontFamily="sans-serif-black"
         android:text="Dados da sua pesagem"
         android:textAlignment="center"
         android:textColor="#6E69FF"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="401dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="195dp"
         android:layout_height="19dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
         android:text="Data de pesagem:"
-        android:textColor="@color/black"
         android:textSize="13sp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="450dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="194dp"
-        android:layout_height="27dp"
-        android:fontFamily="sans-serif-black"
-        android:text="60 kg"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="539dp" />
+        android:layout_width="195dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="Seu novo peso:"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_niveis" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_registrar_novo_peso"
         android:layout_width="328dp"
         android:layout_height="57dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/buttom_borda"
         android:drawableTint="#ffda54"
         android:text="Pesar agora"
         android:textColor="@color/white"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="601dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="30dp"
         android:layout_height="37dp"
-        app:srcCompat="@drawable/ic_info"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="336dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="411dp"
-        android:layout_height="197dp"
-        app:srcCompat="@drawable/ic_wave_bottom"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="596dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/ic_info" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="320dp"
         android:layout_height="39dp"
+        android:layout_marginStart="40dp"
         android:fontFamily="sans-serif-black"
         android:text="Vamos nos pesar?"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="288dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/perfil_icon_foto" />
+    </androidx.cardview.widget.CardView>
+
+    <Spinner
+        android:id="@+id/spinner_niveis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:entries="@array/niveis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="250dp"
+        android:layout_height="160dp"
+        android:src="@drawable/foto_pesagem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
